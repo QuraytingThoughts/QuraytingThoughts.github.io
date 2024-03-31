@@ -100,3 +100,33 @@ button[type="submit"] {
     box-shadow: 1px -1px 4px 0px rgba(148, 145, 145, 0.82); /* Back to starting shadow */
   }
 }
+
+@media only screen and (max-width: 768px) {
+  /* Styles for mobile devices */
+  h1 {
+    font-size: 3em; /* Adjust heading size for mobile */
+  }
+
+  .content {
+    padding: 1rem; /* Adjust content padding for mobile */
+  }
+
+  .thought-cloud {
+    font-size: 0.8rem; /* Adjust text size for thought cloud on mobile */
+  }
+
+  /* Add more styles as needed for mobile responsiveness */
+}
+
+.logo {
+  width: 100px; /* Adjust logo width */
+  height: auto;
+}
+
+/* Media Queries for Mobile Responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 80px; /* Adjust logo width for mobile */
+  }
+}
