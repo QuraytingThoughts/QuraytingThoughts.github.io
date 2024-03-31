@@ -48,3 +48,4 @@ function detectDoubleTap(event) {
 // Add event listeners for both double click and touch end
 document.addEventListener('dblclick', handleDoubleInteraction);
 document.addEventListener('touchend', detectDoubleTap);
+
