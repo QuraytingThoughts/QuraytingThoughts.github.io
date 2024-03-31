@@ -1,5 +1,4 @@
 function toggleTheme() {
-    // Check the current theme (light by default)
     // Get the current theme or set a default
     var theme = document.body.getAttribute('data-theme') || 'light';
 
@@ -26,3 +25,26 @@ function toggleTheme() {
     // Update the data-theme attribute to reflect the new theme
     document.body.setAttribute('data-theme', theme);
 }
+
+
+// Function to handle the double tap or double click event
+function handleDoubleInteraction(event) {
+    toggleTheme();
+}
+
+// Helper variables to handle the mobile double tap
+let lastTapTime = 0;
+
+function detectDoubleTap(event) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTapTime;
+    if (tapLength < 300 && tapLength > 0) {
+        // Detected a double tap
+        handleDoubleInteraction(event);
+    }
+    lastTapTime = currentTime;
+}
+
+// Add event listeners for both double click and touch end
+document.addEventListener('dblclick', handleDoubleInteraction);
+document.addEventListener('touchend', detectDoubleTap);
