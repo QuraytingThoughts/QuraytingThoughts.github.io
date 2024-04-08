@@ -1,3 +1,6 @@
+const tiktokIcon = document.querySelector('a.tiktok img');
+const xIcon = document.querySelector('a.x img');
+
 function toggleTheme() {
     // Get the current theme or set a default
     var theme = document.body.getAttribute('data-theme') || 'light';
@@ -13,6 +16,8 @@ function toggleTheme() {
             element.classList.add("dark-mode");
             element.classList.remove("light-mode");
         }
+        tiktokIcon.src = 'media/icons/tiktok.svg';
+        xIcon.src = 'media/icons/x-twitter.svg';
     } else {
         // Apply light theme
         theme = 'light';
@@ -20,6 +25,8 @@ function toggleTheme() {
             element.classList.add("light-mode");
             element.classList.remove("dark-mode");
         }
+        tiktokIcon.src = 'media/icons/tiktok2.svg';
+        xIcon.src = 'media/icons/x-twitter2.svg';
     }
 
     // Update the data-theme attribute to reflect the new theme
@@ -48,4 +55,3 @@ function detectDoubleTap(event) {
 // Add event listeners for both double click and touch end
 document.addEventListener('dblclick', handleDoubleInteraction);
 document.addEventListener('touchend', detectDoubleTap);
-
