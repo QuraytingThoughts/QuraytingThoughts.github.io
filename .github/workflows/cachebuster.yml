@@ -1,0 +1,21 @@
+name: Update Cache Buster
+
+on: [push]
+
+jobs:
+  update-cache-buster:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Update cache buster in HTML
+      run: |
+        HASH=$(git rev-parse --short HEAD)
+        sed -i "s/css?v=[^\"']*/css?v=$HASH/g" index.html
+        sed -i "s/js?v=[^\"']*/js?v=$HASH/g" index.html
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add index.html
+        git commit -m "Update cache buster" || exit 0 # Exit 0 if no changes
+        git push
