@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'TAN-Pearl';
+  src: url('/fonts/TAN-PEARL.woff') format('opentype'), /* for modern browsers */
+       url('/fonts/TAN-PEARL.woff2') format('truetype'); /* for older browsers */
+  font-weight: normal; 
+  font-style: normal; 
+}
+
 body {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -7,6 +15,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: black;
+}
+
+h1 {
+  font-family: 'TAN-Pearl', sans-serif;
 }
 
 .container {
